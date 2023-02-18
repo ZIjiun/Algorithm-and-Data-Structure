@@ -1,76 +1,26 @@
-// array
-// let arr = ["Harry", "Ron", "Snap"];
-
-// arr.forEach((person) => {
-//   console.log(person);
-// });
-
-// ------------------
-
-// object
-// let Harry = {
-//   name: "Harry Potter",
-//   married: true,
-//   sayHi() {
-//     console.log("Harry says hi to you.");
-//   },
-// };
-
-// console.log(Harry.name);
-// console.log(Harry["name"]);
-
-// Harry.sayHi();
-
-// ------------------
-
-//function
-// function add(n1, n2) {
-//   console.log(n1 + n2);
-// }
-
-// add(8, -4);
-
-// function add(n1, n2) {
-//   return n1 + n2;
-// }
-
-// let result = add(10, 15);
-// console.log(result);
-
-// ------------------
-
-// class
-let c1 = {
-  raduis: 5,
-  getArea() {
-    return Math.PI * this.raduis * this.raduis;
-  },
-};
-
-console.log(c1.raduis);
-console.log(c1.getArea);
-
-let c2 = {
-  raduis: 10,
-  getArea() {
-    return Math.PI * this.raduis * this.raduis;
-  },
-};
-
-console.log(c1.raduis);
-console.log(c1.getArea);
-
-class Circle {
-  constructor(radius) {
-    this.radius = radius;
+// 1 + 2 + 3 + ... + n = sum
+function fun1(n) {
+  let sum = 0;
+  for (let i = 1; i <= n; i++) {
+    sum += i;
   }
-  getArea() {
-    return Math.PI * this.radius * this.radius;
-  }
+  return sum;
 }
 
-let c3 = new Circle(5);
-console.log(c3.radius);
-console.log(c3.getArea());
+function fun2(n) {
+  return ((1 + n) * n) / 2;
+}
 
-let c4 = new Circle();
+let time1 = window.performance.now();
+fun1(100000000);
+let time2 = window.performance.now();
+let timeDiff1 = time2 - time1;
+console.log(`It takes ${timeDiff1} seconds to run fun1.`);
+console.log(`fun1 = ${fun1(100000000)}`);
+
+let time3 = window.performance.now();
+fun2(100000000);
+let time4 = window.performance.now();
+let timeDiff2 = time4 - time3;
+console.log(`It takes ${timeDiff2} seconds to run fun2.`);
+console.log(`fun2 = ${fun2(100000000)}`);

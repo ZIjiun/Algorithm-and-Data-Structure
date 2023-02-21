@@ -1,0 +1,22 @@
+arr1 = [15, 3, 6, 8, 24, 16];
+arr2 = [11, 3, 9, 6, 15, 18];
+arr3 = arr1.concat(arr2);
+let counter = {};
+let result = [];
+
+for (let i = 0; i < arr3.length; i++) {
+  if (!counter[arr3[i]]) {
+    //counter[arr3[i]] 如果沒有某個屬性會是 undefined，會回傳 false
+    counter[arr3[i]] = 1;
+  } else {
+    counter[arr3[i]]++; // counter[arr3[i]] = counter[arr3[i]] + 1;
+  }
+}
+
+for (let property in counter) {
+  if (counter[property] >= 2) {
+    result.push(property);
+  }
+}
+
+console.log(result);

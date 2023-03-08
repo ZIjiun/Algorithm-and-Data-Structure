@@ -2,6 +2,7 @@ function insertionSort(arr) {
   for (let j = 1; j <= arr.length - 1; j++) {
     let key = arr[j];
     let i = j - 1;
+    // 找到新 key 後，與前面每一個元素的比較
     while (i >= 0 && arr[i] > key) {
       arr[i + 1] = arr[i];
       i -= 1; // key 一直往前做比較
